@@ -10,7 +10,7 @@ if (url != null) {
     var div = document.createElement("div");
     var imgURL = chrome.extension.getURL(environment+"_banner.png");
     div.innerHTML = "<img src="+imgURL+"\>";
-    div.style.cssText = "position: fixed;left: 0;top: 0;";
+    div.style.cssText = "position: fixed;left: 0;top: 0;z-index: 1000;";
     document.getElementsByTagName('body')[0].appendChild(div);
   }
 }
