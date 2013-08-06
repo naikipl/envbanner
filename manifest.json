@@ -2,6 +2,8 @@
   "manifest_version": 2,
 
   "name": "EnvBanner",
+  "author": "Naiki Pearl",
+  "homepage_url": "https://github.com/naikipl/envbanner",
   "description": "This extension places an environment banner on NZPost API pages",
   "version": "1.0",
   "icons": { "16": "icon16.png",
