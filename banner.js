@@ -7,10 +7,13 @@ if (url != null) {
   }
 
   if (environment.match("dev|testing|uat")) {
-    var div = document.createElement("div");
-    var imgURL = chrome.extension.getURL(environment+"_banner.png");
-    div.innerHTML = "<img src="+imgURL+"\>";
-    div.className = 'env_banner_wrapper'
-    document.getElementsByTagName('body')[0].appendChild(div);
+    var outterDiv = document.createElement("div");
+    var innerDiv = document.createElement("div");
+    match = environment.match(/\b\w/);
+    innerDiv.innerHTML = environment.replace(/(\b\w)/, match.toString().toUpperCase());
+    innerDiv.id = 'banner_content';
+    outterDiv.appendChild(innerDiv);
+    outterDiv.className = 'env_banner_wrapper ' + environment;
+    document.getElementsByTagName('body')[0].appendChild(outterDiv);
   }
 }
